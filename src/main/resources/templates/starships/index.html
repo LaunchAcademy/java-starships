@@ -1,0 +1,14 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+  <body>
+    <h1> startships index page</h1>
+
+    <div th:each="starship :${starships}">
+      <div th:object="${starship}">
+       <a th:href="'/starships/'+ *{id}"> <h1 th:text="*{name}">Name</h1></a>
+        <h2 th:text="*{fuelCapacity}">Fuel Capacity</h2>
+      </div>
+    </div>
+
+  </body>
+</html>

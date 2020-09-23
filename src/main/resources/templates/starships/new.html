@@ -1,0 +1,23 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+<body>
+  <h1>New StarShip!</h1>
+  <form action="#" th:action="@{/starships}" th:object="${starShip}" method="post">
+    <div>
+      <label th:for="name">Name your StarShip:</label>
+      <input type="text" th:field="*{name}" />
+    </div>
+    <div>
+      <label th:for="description">Quick description of your starShip plz:</label>
+      <input type="text" th:field="*{description}" />
+    </div>
+    <div>
+      <label th:for="fuelCapacity">Fuel capacity of the starShip?</label>
+      <input type="text" th:field="*{fuelCapacity}" />
+    </div>
+    <div>
+      <input type="submit" value="Add this StarShip" />
+    </div>
+  </form>
+</body>
+</html>

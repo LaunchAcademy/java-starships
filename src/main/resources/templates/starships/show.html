@@ -1,0 +1,15 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+
+<body>
+
+<div th:object="${starShip}">
+  <h1 th:if="${starShip.name == 'Rocinante'}" class="blue-header" th:text="*{name}">Name</h1>
+    <h1 th:unless="${starShip.name == 'Rocinante'}" th:text="*{name}">Name</h1>
+  <p th:text="*{description}" class="description"></p>
+  <p th:text="${starShip.getFuelCapacityReading()}"></p>
+</div>
+<a href="/starships">Return to Index</a>
+</body>
+
+</html>
