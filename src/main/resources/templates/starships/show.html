@@ -1,0 +1,23 @@
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body})}">
+
+<body>
+<h1>StarShips show page</h1>
+
+    <div class="starship" th:object="${starship}">
+        <dl>
+            <dt>Name</dt>
+            <dd th:text="*{name}"></dd>
+            <dt>Description</dt>
+            <dd th:text="*{description}" class="description"></dd>
+            <dt>Fuel Capacity in Teraliters</dt>
+            <dt th:text="*{fuelCapacity + ' LT, ' + fuelGauge}"></dt>
+            <dd th:text="*{fuelCapacity lt 300 ? 'LOW' : fuelCapacity le 700 ? 'AVERAGE' : 'HIGH'}"></dd>
+<!--            <dd th:text="HIGH"></dd>-->
+<!--            <dd th:if="*{fuelCapacity ge 300 && fuelCapacity le 700}" th:text="AVERAGE"></dd>-->
+<!--            <dd th:if="*{fuelCapacity} < 300" th:text="LOW"></dd>-->
+<!--            "HIGH" (>700), "AVERAGE" (300-700), and "LOW" capacity (<300)-->
+            <a href="/starships">See list of starships</a>
+        </dl>
+    </div>
+</body>
+</html>

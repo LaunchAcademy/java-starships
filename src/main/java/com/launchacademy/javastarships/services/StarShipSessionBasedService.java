@@ -42,11 +42,11 @@ public class StarShipSessionBasedService implements StarShipService {
     return this.starShips;
   }
 
-  public StarShip get(Integer id) {
-    return this.starShips.get(id-1);
-  }
-
   public void addToList(StarShip starShip) {
     this.starShips.add(starShip);
+  }
+
+  public StarShip get(Integer id) {
+    return this.starShips.get(id-1);
   }
 }

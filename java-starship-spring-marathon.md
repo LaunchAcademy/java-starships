@@ -54,6 +54,11 @@ Acceptance Criteria:
 - When I'm viewing an individual starship, I see a dynamic "fuel capacity" indicator based on the fuel capacity of the ship: "HIGH" (>700), "AVERAGE" (300-700), and "LOW" capacity (<300)
 - This capacity should show up under the "Fuel Capacity" section of the show page: e.g. "Fuel Capacity: LOW (295 Teraliters)"
 
+Implementation Details:
+
+- Make sure you conditionally update a _single_ element to implement this feature, rather than having 3 elements that conditionally appear
+- First implement this using conditional logic _within_ your Thymeleaf template. Then, consider where you could refactor this out to.
+
 ### Add a New StarShip
 
 ```no-highlight
