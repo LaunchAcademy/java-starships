@@ -1,14 +1,22 @@
+<!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org"
       th:replace="~{fragments/layout :: layout (~{::body})}">
-  <body>
-    <h1> startships index page</h1>
+<!--if you are not doing fragments you need this:-->
+<!--<link href="/css/main.css" rel="stylesheet">-->
+<!--or a style tag as shown in https://bit.ly/3ujacGO-->
+<body>
+<h1>All Starship!</h1>
+<div class="starships" th:each="starship:${starships}">
+    <div class="starship" th:object="${starship}">
+        <a th:href="'/starships/' + *{id}">
+            <h2 th:text="*{name}"></h2>
+        </a>
+        <dl>
+            <dt>Fuel Capacity</dt>
 
-    <div th:each="starship :${starships}">
-      <div th:object="${starship}">
-       <a th:href="'/starships/'+ *{id}"> <h1 th:text="*{name}">Name</h1></a>
-        <h2 th:text="*{fuelCapacity}">Fuel Capacity</h2>
-      </div>
+            <dd th:text="*{fuelCapacity}"></dd>
+        </dl>
     </div>
-
-  </body>
+</div>
+</body>
 </html>

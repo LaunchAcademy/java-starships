@@ -1,15 +1,15 @@
+<!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org"
       th:replace="~{fragments/layout :: layout (~{::body})}">
-
+<!--if you are not doing fragments you need this:-->
+<!--<link href="/css/main.css" rel="stylesheet">-->
+<!--or a style tag as shown in https://bit.ly/3ujacGO-->
 <body>
-
-<div th:object="${starShip}">
-  <h1 th:if="${starShip.name == 'Rocinante'}" class="blue-header" th:text="*{name}">Name</h1>
-    <h1 th:unless="${starShip.name == 'Rocinante'}" th:text="*{name}">Name</h1>
-  <p th:text="*{description}" class="description"></p>
-  <p th:text="${starShip.getFuelCapacityReading()}"></p>
+<div th:object="${starship}">
+  <h1 th:text="*{name}"></h1>
+  <p class="description" th:text="*{description}"></p>
+  <p th:text="${starship.getFuelReading()}"></p>
 </div>
-<a href="/starships">Return to Index</a>
+<a th:href="'/starships'">Go Back</a>
 </body>
-
 </html>

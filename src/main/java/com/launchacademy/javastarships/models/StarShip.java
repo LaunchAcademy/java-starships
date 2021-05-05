@@ -41,15 +41,15 @@ public class StarShip {
     this.fuelCapacity = fuelCapacity;
   }
 
-  public String getFuelCapacityReading() {
-    String reading = "";
-    if (fuelCapacity > 700) {
-      reading = "HIGH";
-    } else if (fuelCapacity < 300) {
-      reading = "LOW";
-    } else {
-      reading = "AVERAGE";
+  public String getFuelReading(){
+    String fuelString = "";
+    if(fuelCapacity>700){
+      fuelString="HIGH";
+    }else if(fuelCapacity<300){
+      fuelString="LOW";
+    }else{
+      fuelString="AVERAGE";
     }
-    return reading + " (" + fuelCapacity + " Teraliters)";
+    return fuelString;
   }
 }
