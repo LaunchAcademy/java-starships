@@ -8,7 +8,7 @@
   <div th:object="${starship}">
     <h1 th:text="*{name}"></h1>
     <p class="description" th:text="*{description}"></p>
-    <p th:text="'Fuel capacity: ' + ${starShip.status()} + ' '+ *{fuelCapacity} + ' Teraliters'">Capacity</p>
+    <p th:text="'Fuel capacity: ' + ${starship.getFuelReading()} + ' '+ *{fuelCapacity} + ' Teraliters'">Capacity</p>
   </div>
   <a th:href="'/starships'">Go Back</a>
 </body>
