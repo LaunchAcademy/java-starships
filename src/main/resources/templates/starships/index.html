@@ -1,12 +1,16 @@
-<html xmlns:th="https://www.thymeleaf.org"
-      th:replace="~{fragments/layout :: layout (~{::body})}">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8">
+    <title>Starships</title>
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
   <body>
-    <h1>These are the StarShips</h1>
-
-    <ul th:each="starShip : ${starShips}">
-      <div th:object="${starShip}">
-      <a th:href="'/starships/' + *{id}">  <li th:text="*{name + ':' + fuelCapacity}"></li></a>
-      </div>
+    <h1 th:class="blue-header">All Starships</h1>
+    <ul>
+      <li th:each="ship:${starships}">
+        <a th:href="'/starships/' + ${ship.id}" th:text="${ship.name}">ShipName</a>
+      </li>
     </ul>
   </body>
 </html>

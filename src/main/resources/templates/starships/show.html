@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Starships</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <h1 th:class="blue-header" th:text="showPage">Show Page</h1>
+  <div th:object="${starship}" >
+    <p th:text="*{name}" />
+<!--    <p th:text="*{getFuelStatement()}" />-->
+    <h2>Fuel Capacity:</h2>
+    <p th:text="*{fuelCapacity lt 300 ? 'LOW' : fuelCapacity le 700 ? 'AVERAGE' : 'HIGH'}" />
+    <p th:text="|(*{fuelCapacity} Teraliters)|" />
+    <p th:text="*{description}" />
+  </div>
+
+</body>
+</html>
