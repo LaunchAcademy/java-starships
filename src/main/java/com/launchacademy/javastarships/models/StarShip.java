@@ -40,4 +40,14 @@ public class StarShip {
   public void setFuelCapacity(Integer fuelCapacity) {
     this.fuelCapacity = fuelCapacity;
   }
+
+  public String fuelIndicator(){
+    if(this.fuelCapacity>700){
+      return "HIGH";
+    }else if (this.fuelCapacity >= 300 && this.fuelCapacity <= 700){
+      return "AVERAGE";
+    }else{
+      return "LOW";
+    }
+  }
 }
