@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>StarShips</title>
+</head>
+  <body>
+    <div th:object="${starship}">
+      <h1 th:text="*{name}"></h1>
+      <p th:text="*{description}"></p>
+    <!--  <p><span th:text="*{fuelCapacity}"></span> Teraliters</p>-->
+      <div>
+        <h2>Fuel Capacity:</h2>
+        <p th:text="*{fuelCapacity gt 700 ? 'HIGH' : fuelCapacity ge 300 ? 'AVERAGE' : 'LOW'}"></p>
+        <p th:text="'(' + *{fuelCapacity} + ' Teraliters)'"></p>
+      </div>
+      <a th:href="@{/starships}">Back to All StarShips</a>
+    </div>
+  </body>
+</html>
