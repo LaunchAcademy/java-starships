@@ -1,0 +1,20 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+
+<body>
+<h2 th:class="blue-header"> Show Page</h2>
+  <div th:object="${ship}">
+  <dl>
+    <dt>Ship Name</dt>
+    <dd th:text="*{name}"></dd>
+
+    <dt>Description</dt>
+    <dd th:class="description" th:text="*{description}"></dd>
+
+    <dt>Fuel Capacity</dt>
+    <dd th:text="${ship.getFuelReading()}"></dd>
+  </dl>
+  </div>
+</body>
+</html>
+
